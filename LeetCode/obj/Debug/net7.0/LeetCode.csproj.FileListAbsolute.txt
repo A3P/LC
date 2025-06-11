@@ -1,0 +1,5 @@
+C:\Code\LeetCode\LeetCode\obj\Debug\net7.0\LeetCode.csproj.AssemblyReference.cache
+C:\Code\LeetCode\LeetCode\obj\Debug\net7.0\LeetCode.GeneratedMSBuildEditorConfig.editorconfig
+C:\Code\LeetCode\LeetCode\obj\Debug\net7.0\LeetCode.AssemblyInfoInputs.cache
+C:\Code\LeetCode\LeetCode\obj\Debug\net7.0\LeetCode.AssemblyInfo.cs
+C:\Code\LeetCode\LeetCode\obj\Debug\net7.0\LeetCode.csproj.CoreCompileInputs.cache
