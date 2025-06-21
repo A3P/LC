@@ -33,11 +33,78 @@ using System.Threading.Tasks;
 //    }
 //}
 
+//public class Solution
+//{
+//    public int MinEatingSpeed(int[] piles, int h)
+//    {
+//        int lowerBound = 1;
+//        int upperBound = 0;
+//        foreach(int pile in piles)
+//        {
+//            if(pile > upperBound)
+//            {
+//                upperBound = pile;
+//            }
+//        }
+//        Console.WriteLine($"upperBound {upperBound}");
+
+
+//        int hours = 0;
+//        int speed = (upperBound + lowerBound) / 2;
+//        while (speed != lowerBound || h != hours)
+//        {
+//            hours = 0;
+//            speed = (upperBound + lowerBound) / 2;
+//            Console.WriteLine($"speed {speed}, using lowerbound {lowerBound}, upper {upperBound}");
+
+//            for (int i = 0; i < piles.Length; i++)
+//            {
+//                hours += piles[i] / speed;
+//                if (piles[i] % speed > 0)
+//                {
+//                    hours += 1;
+//                }
+//                Console.WriteLine($" pile {piles[i]}, in total hours {hours}");
+//            }
+//            if(hours > h)
+//            {
+//                lowerBound = speed + 1;
+//            } else
+//            {
+//                upperBound = speed - 1; 
+//            }
+//        }
+//        return speed;
+//    }
+//}
+
 public class Solution
 {
     public int MinEatingSpeed(int[] piles, int h)
     {
-        int total = piles;
-        foreach
+        int l = 1;
+        int r = piles.Max();
+        int res = r;
+
+        while (l <= r)
+        {
+            int k = (l + r) / 2;
+
+            long totalTime = 0;
+            foreach (int p in piles)
+            {
+                totalTime += (int)Math.Ceiling((double)p / k);
+            }
+            if (totalTime <= h)
+            {
+                res = k;
+                r = k - 1;
+            }
+            else
+            {
+                l = k + 1;
+            }
+        }
+        return res;
     }
 }
